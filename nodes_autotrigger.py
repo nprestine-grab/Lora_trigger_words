@@ -238,8 +238,8 @@ class LoraTagsOnly:
             }
         }
 
-    RETURN_TYPES = ("LIST", "LIST")
-    RETURN_NAMES = ("civitai_tags_list", "meta_tags_list")
+    RETURN_TYPES = ("LIST", "LIST", "STRING", "STRING")
+    RETURN_NAMES = ("civitai_tags_list", "meta_tags_list", "lora_name", "lora_trigger_words")
     FUNCTION = "ask_lora"
     CATEGORY = "autotrigger"
 
@@ -248,11 +248,12 @@ class LoraTagsOnly:
             lora_name = override_lora_name
         meta_tags_list = sort_tags_by_frequency(get_metadata(lora_name, "loras"))
         civitai_tags_list = load_and_save_tags(lora_name, force_fetch)
+        lora_trigger_words = get_model_description(get_metadata(lora_name, "loras"))
 
         meta_tags_list = append_lora_name_if_empty(meta_tags_list, lora_name, append_loraname_if_empty)
         civitai_tags_list = append_lora_name_if_empty(civitai_tags_list, lora_name, append_loraname_if_empty)
 
-        return (civitai_tags_list, meta_tags_list)
+        return (civitai_tags_list, meta_tags_list, lora_name, lora_trigger_words)
 
 
 # A dictionary that contains all nodes you want to export with their names
