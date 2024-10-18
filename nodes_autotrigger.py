@@ -258,7 +258,7 @@ class LoraTagsOnly:
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
 NODE_CLASS_MAPPINGS = {
-    "LoraLoaderVanilla": LoraLoaderVanilla,
+    "MetadataLoraLoader": LoraLoaderVanilla,
     "LoraLoaderStackedVanilla": LoraLoaderStackedVanilla,
     "LoraLoaderAdvanced": LoraLoaderAdvanced,
     "LoraLoaderStackedAdvanced": LoraLoaderStackedAdvanced,
@@ -267,7 +267,7 @@ NODE_CLASS_MAPPINGS = {
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoraLoaderVanilla": "LoraLoaderVanilla",
+    "MetadataLoraLoader": "MetadataLoraLoader",
     "LoraLoaderStackedVanilla": "LoraLoaderStackedVanilla",
     "LoraLoaderAdvanced": "LoraLoaderAdvanced",
     "LoraLoaderStackedAdvanced": "LoraLoaderStackedAdvanced",
