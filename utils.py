@@ -171,6 +171,15 @@ def sort_tags_by_frequency(meta_tags):
         return list(sorted_tags.keys())
     else:
         return []
+    
+# parse the __metadata__ json looking for model description
+def get_model_description(meta_tags):
+    if meta_tags is None:
+        return ""
+    if "modelspec.description" in meta_tags:
+        return meta_tags["modelspec.description"]
+    else:
+        return ""
 
 def parse_selector(selector, tags_list): 
     if len(tags_list) == 0:

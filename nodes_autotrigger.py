@@ -26,8 +26,8 @@ class LoraLoaderVanilla:
             }
         }
     
-    RETURN_TYPES = ("MODEL", "CLIP", "LIST", "LIST", "STRING")
-    RETURN_NAMES = ("MODEL", "CLIP", "civitai_tags_list", "meta_tags_list", "lora_name")
+    RETURN_TYPES = ("MODEL", "CLIP", "LIST", "LIST", "STRING", "STRING")
+    RETURN_NAMES = ("MODEL", "CLIP", "civitai_tags_list", "meta_tags_list", "lora_name", "lora_trigger_words")
     FUNCTION = "load_lora"
     CATEGORY = "autotrigger"
 
@@ -36,6 +36,7 @@ class LoraLoaderVanilla:
             lora_name = override_lora_name
         meta_tags_list = sort_tags_by_frequency(get_metadata(lora_name, "loras"))
         civitai_tags_list = load_and_save_tags(lora_name, force_fetch)
+        lora_trigger_words = get_model_description(get_metadata(lora_name, "loras"))
 
         meta_tags_list = append_lora_name_if_empty(meta_tags_list, lora_name, append_loraname_if_empty)
         civitai_tags_list = append_lora_name_if_empty(civitai_tags_list, lora_name, append_loraname_if_empty)
@@ -56,7 +57,7 @@ class LoraLoaderVanilla:
 
         model_lora, clip_lora = load_lora_for_models(model, clip, lora, strength_model, strength_clip)
   
-        return (model_lora, clip_lora, civitai_tags_list, meta_tags_list, lora_name)
+        return (model_lora, clip_lora, civitai_tags_list, meta_tags_list, lora_name, lora_trigger_words)
 
 class LoraLoaderStackedVanilla:
     @classmethod
