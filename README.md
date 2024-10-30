@@ -1,4 +1,4 @@
-# ComfyUI-Lora-Auto-Trigger-Words test
+# ComfyUI-Lora-Auto-Trigger-Words
 
 This project is a fork of https://github.com/idrirap/ComfyUI-Lora-Auto-Trigger-Words
 which is a fork of https://github.com/Extraltodeus/LoadLoraWithTags
