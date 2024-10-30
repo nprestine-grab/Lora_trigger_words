@@ -1,4 +1,4 @@
-# ComfyUI-Lora-Auto-Trigger-Words
+# ComfyUI-Lora-Auto-Trigger-Words test
 
 This project is a fork of https://github.com/Extraltodeus/LoadLoraWithTags
 The aim of these custom nodes is to get an _easy_ access to the tags used to trigger a lora. 
@@ -31,7 +31,7 @@ Lora trigger words are imported from two sources :
 #### LoraLoader (Vanilla and Advanced)
 ![image](./images/LoraLoader.png)
 INPUT
-- `override_lora_name` (optional): Used to ignore the field `lora_name` and use the name passed. Should use [LoraListNames](#loralistnames) or the `lora_name` output.
+- `override_lora_name` (optional): Used to ignore the field `lora_name` and use the name passed. Should use [LoraListNames](#loralistnames) or the `lora_name` output. 
 
 FIELDS
 - `force_fetch`: Force the civitai fetching of data even if there is already something saved
